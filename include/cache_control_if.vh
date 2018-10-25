@@ -11,7 +11,7 @@
   1) Pack the caches_if signals from one or more caches_if
   and send it to the memory controller through a single modport.
 
-  2) Provide the memory controller with signals used to 
+  2) Provide the memory controller with signals used to
   communicate with RAM.
 
 */
@@ -53,16 +53,16 @@ interface cache_control_if(
   ramstate_t              ramstate;
   word_t                  ramaddr, ramstore, ramload;
 
-  /* 
+  /*
      These interface assignments are to avoid synthesis errors and
      strange simulation behavior.
 
      For uniprocessors (CPUS == 1), no indexing into the following
-     signals is required by the memory controller.  For multiprocessors, 
+     signals is required by the memory controller.  For multiprocessors,
      all signals are arrays of 2 and must be indexed.
 
      Note: iREN, dREN, dWEN, dstore, iaddr, daddr, ccwrite, and cctrans
-	   cannot be assigned directly through the cache_control_if. 
+	   cannot be assigned directly through the cache_control_if.
 	   These signals can be written to through a caches_if sent
 		 into the cache_control_interface
   */

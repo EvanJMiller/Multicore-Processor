@@ -8,7 +8,7 @@
   shubhamrastogi3111995@gmail.com
 
   cache structs added
-  
+
 */
 `ifndef CPU_TYPES_PKG_VH
 `define CPU_TYPES_PKG_VH
@@ -168,12 +168,19 @@ package cpu_types_pkg;
 	word_t [1:0] data;
   } dcache_frame;
 
-  //icache frame  
+  //icache frame
   typedef struct packed {
 	logic valid;
 	logic [ITAG_W - 1:0] tag;
 	word_t data;
   } icache_frame;
+
+// extender control
+  typedef enum logic [1:0] {
+    EX_ZERO  = 2'b00,
+    EX_SIGNED  = 2'b01,
+    EX_UPPER = 2'b10
+  } ex_t;
 
 endpackage
 `endif //CPU_TYPES_PKG_VH

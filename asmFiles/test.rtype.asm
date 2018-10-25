@@ -12,9 +12,9 @@
 
 # Now running all R type instructions
   or    $3,$1,$2
-  and   $4,$1,$2
+  and   $4,$3,$2
   andi  $5,$1,0xF
-  addu  $6,$1,$2
+  addu  $6,$5,$2
   addiu $7,$3,0x8740
   subu  $8,$4,$2
   xor   $9,$5,$2
